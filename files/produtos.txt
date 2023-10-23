@@ -1,0 +1,4 @@
+123;Console 1;true;3999;Xbox SERIES X;111314;12;C
+312;Console 2;true;3499;Playsation5;111314;12;C
+456;Game 1;true;249;123;PayDay 3;3;G
+999;Game 2;true;249;123;BloodBorne;3;G

@@ -1,0 +1,2 @@
+123;Console 1;true;3999;Xbox SERIES X;111314;12;C
+312;Console 2;true;3499;Playsation5;111314;12;C
