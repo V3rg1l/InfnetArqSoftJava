@@ -10,6 +10,7 @@ import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import br.edu.infnet.appvenda.model.domain.Console;
+import br.edu.infnet.appvenda.model.domain.Vendedor;
 import br.edu.infnet.appvenda.model.service.ConsoleService;
 
 @Order(3)
@@ -42,7 +43,11 @@ public class ConsoleLoader implements ApplicationRunner {
 			console.setModelo(campos[5]);
 			console.setGarantiaMeses(Integer.valueOf(campos[6]));
 			
-			//consoleService.incluir(console);
+			Vendedor vendedor =  new Vendedor();
+			vendedor.setId(1);
+			console.setVendedor(vendedor);
+			
+			consoleService.incluir(console);
 			
 			linha = leitura.readLine();
 		}

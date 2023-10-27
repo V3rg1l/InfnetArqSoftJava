@@ -1,5 +1,8 @@
 package br.edu.infnet.appvenda.model.domain;
 
+import javax.persistence.Entity;
+
+@Entity
 public class Console extends Produto {
 
 	private String descricaoConsole;

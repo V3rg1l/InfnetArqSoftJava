@@ -12,6 +12,7 @@ import org.springframework.stereotype.Component;
 import br.edu.infnet.appvenda.model.domain.Console;
 import br.edu.infnet.appvenda.model.domain.Game;
 import br.edu.infnet.appvenda.model.domain.Produto;
+import br.edu.infnet.appvenda.model.domain.Vendedor;
 import br.edu.infnet.appvenda.model.service.ProdutoService;
 
 @Order(2)
@@ -46,6 +47,10 @@ public class ProdutoLoader implements ApplicationRunner {
 				console.setModelo(campos[5]);
 				console.setGarantiaMeses(Integer.valueOf(campos[6]));
 				
+				Vendedor vendedor =  new Vendedor();
+				vendedor.setId(1);
+				console.setVendedor(vendedor);
+				
 				produtoService.incluir(console);
 				
 				break;
@@ -59,6 +64,10 @@ public class ProdutoLoader implements ApplicationRunner {
 				game.setCodigoConsole(Integer.valueOf(campos[4]));
 				game.setDescricaoGame(campos[5]);
 				game.setGarantiaMeses(Integer.valueOf(campos[6]));
+				
+				vendedor =  new Vendedor();
+				vendedor.setId(1);
+				game.setVendedor(vendedor);
 				
 				produtoService.incluir(game);
 				

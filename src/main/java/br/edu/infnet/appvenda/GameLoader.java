@@ -10,6 +10,7 @@ import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import br.edu.infnet.appvenda.model.domain.Game;
+import br.edu.infnet.appvenda.model.domain.Vendedor;
 import br.edu.infnet.appvenda.model.service.GameService;
 
 @Order(4)
@@ -41,6 +42,10 @@ public class GameLoader implements ApplicationRunner {
 			game.setCodigoConsole(Integer.valueOf(campos[4]));
 			game.setDescricaoGame(campos[5]);
 			game.setGarantiaMeses(Integer.valueOf(campos[6]));
+			
+			Vendedor vendedor =  new Vendedor();
+			vendedor.setId(1);
+			game.setVendedor(vendedor);
 			
 			gameService.incluir(game);
 			

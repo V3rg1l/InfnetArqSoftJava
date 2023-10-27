@@ -1,5 +1,8 @@
 package br.edu.infnet.appvenda.model.domain;
 
+import javax.persistence.Entity;
+
+@Entity
 public class Game extends Produto {
 
 
