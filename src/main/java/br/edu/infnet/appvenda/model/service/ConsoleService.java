@@ -21,4 +21,8 @@ public class ConsoleService {
 	public Collection<Console> obterLista(){	
 		return (Collection<Console>) consoleRepository.findAll();
 	}
+	
+	public long obterQtde() {
+		return consoleRepository.count();
+	}
 }

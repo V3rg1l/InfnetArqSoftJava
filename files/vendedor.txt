@@ -1,3 +1,5 @@
-Danilo;123456789;danilo@danilo.com
-Helo;123564879;helo@helo.com
-Jade;564789123;jade@jade.com
+Danilo;123.123.123-12;elberth@moraes.com
+Helo;456.456.456-45;hugo@hugo.com
+Jade;345.345.345-34;jose@jose.com
+Luizinho;234.234.234-23;luiz@luiz.com
+Luiza;123.234.234-23;luiza@luiz.com

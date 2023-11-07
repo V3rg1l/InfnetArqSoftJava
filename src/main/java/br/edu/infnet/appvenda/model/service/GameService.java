@@ -21,5 +21,9 @@ public class GameService {
 	public Collection<Game> obterLista(){	
 		return (Collection<Game>) gameRepository.findAll();
 	}
+	
+	public long obterQtde() {
+		return gameRepository.count();
+	}
 }
 
