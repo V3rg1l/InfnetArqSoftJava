@@ -30,6 +30,7 @@ public class AppController {
 		model.addAttribute("qtdProduto", produtoService.obterQtde());
 		model.addAttribute("qtdConsole", consoleService.obterQtde());
 		model.addAttribute("qtdGame", gameService.obterQtde());
+		
 		return "home";
 	}
 	
@@ -39,7 +40,7 @@ public class AppController {
 		model.addAttribute("titulo", "Vendedores:");
 		model.addAttribute("lista", vendedorService.obterLista());
 		
-		return "home";
+		return showHome(model);
 	}
 	
 	@GetMapping(value = "/produto/lista")
@@ -48,7 +49,7 @@ public class AppController {
 		model.addAttribute("titulo", "Produtos:");
 		model.addAttribute("lista", produtoService.obterLista());
 		
-		return "home";
+		return showHome(model);
 	}
 	
 	@GetMapping(value = "/console/lista")
@@ -57,7 +58,7 @@ public class AppController {
 		model.addAttribute("titulo", "Consoles:");
 		model.addAttribute("lista", consoleService.obterLista());
 		
-		return "home";
+		return showHome(model);
 	}
 	
 	@GetMapping(value = "/game/lista")
@@ -66,6 +67,6 @@ public class AppController {
 		model.addAttribute("titulo", "Games:");
 		model.addAttribute("lista", gameService.obterLista());
 		
-		return "home";
+		return showHome(model);
 	}
 }

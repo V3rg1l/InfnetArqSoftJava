@@ -27,33 +27,67 @@
 	        <a class="nav-link" href="/game/lista">Games</a>
 	      </li>
 	    </ul>
+    	<c:if test="${not empty listagem}">
+			<form class="d-flex" action="/${rota}/pesquisar">
+				<input class="form-control me-2" type="text" name="campoBusca"
+					placeholder="Search">
+				<button class="btn btn-primary" type="submit">Search</button>
+			</form>
+		</c:if>
 	  </div>
 	</nav>
-	
 	<div class="container mt-3">
-	
-		<span class="badge rounded-pill bg-primary">Vendedor: ${qtdVendedor}</span>
-	  	<span class="badge rounded-pill bg-secondary">Produto: ${qtdProduto}</span>
-	  	<span class="badge rounded-pill bg-success">Console: ${qtdConsole}</span>
-	  	<span class="badge rounded-pill bg-danger">Game: ${qtdGame}</span>
-  	
-  		<c:if test="${not empty lista}">
+
+		<span class="badge rounded-pill bg-primary">Vendedor:
+			${qtdeVendedor}</span> <span class="badge rounded-pill bg-secondary">Produto:
+			${qtdeProduto}</span> <span class="badge rounded-pill bg-success">Consoles:
+			${qtdeAlimenticio}</span> <span class="badge rounded-pill bg-danger">Games:
+			${qtdeEletronico}</span>
+
+		<c:if test="${not empty listagem}">
 			<h2>AppVenda</h2>
 			<p>Gestão de vendas de produtos:</p>
 			<table class="table">
 				<thead class="table-dark">
 					<tr>
-					  <th>${titulo}</th>
+						<th>${titulo}</th>
+						<th></th>
 					</tr>
 				</thead>
 				<tbody>
-					<c:forEach var="item" items="${lista}">
+					<c:forEach var="item" items="${listagem}">
 						<tr>
-					  		<td>${item}</td>
+							<td>${item}</td>
+							<td><a href="/${rota}/${item.id}/excluir">excluir</a></td>
 						</tr>
 					</c:forEach>
 				</tbody>
 			</table>
+		</c:if>
+
+		<c:if test="${not empty informacoes}">
+			<hr>
+			<table class="table">
+				<thead class="table-dark">
+					<tr>
+						<th>Informações:</th>
+					</tr>
+				</thead>
+				<tbody>
+					<c:forEach var="item" items="${informacoes}">
+						<tr>
+							<td>${item}</td>
+						</tr>
+					</c:forEach>
+				</tbody>
+			</table>
+		</c:if>
+
+		<c:if test="${not empty objeto}">
+			<hr>
+			<div class="alert alert-success">
+				<strong>Sucesso!</strong> ${objeto}
+			</div>
 		</c:if>
 	</div>
 </body>
